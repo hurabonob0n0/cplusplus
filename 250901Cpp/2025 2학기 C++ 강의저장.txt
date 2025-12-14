@@ -1,0 +1,315 @@
+====================================================================
+저장시간 - 2025-09-08 14:04:02.1893816
+====================================================================
+
+// 2주 1일
+// 컴파일 환경 - 버전 17.14.13(August 2025)
+// Release/ x64
+// SDL 검사 아니오
+// 미리보기 - std:c++latest
+
+#include "save.h"
+
+#include <iostream>
+#include <print>
+#include <thread>
+#include <chrono>
+#include <fstream>
+using namespace std;
+
+//[문제] 구구단을 출력하자
+// 아래와 '똑같이'
+//7 x 1 =  7
+//7 x 2 = 14
+//7 x 3 = 21 
+
+int main()
+{
+	std::cout << "몇 단? ";
+	int dan;
+	std::cin >> dan;
+
+	// Todo : 여기서 제대로 된 입력인지 검사할 코드가 필요하다.
+	std::cout << dan << "단을 출력합니다" << '\n';
+
+	cout << "===============나===============" << endl;
+
+	for (int i = 1; i <= 9; ++i){
+		if(dan * i < 10)
+			std::cout << dan << " x " << i << " =  " << dan * i << '\n';
+		else
+			std::cout << dan << " x " << i << " = " << dan * i << '\n';
+	}
+
+
+	cout << "===============교수님===============" << endl;
+	for (int i = 1; i <= 9; ++i) {
+		println("{0:^10} x {1:^10} = {2:10d}", dan, i, dan * i);
+	}
+
+	save("250908.cpp");
+}
+
+
+
+====================================================================
+저장시간 - 2025-09-08 14:09:59.8501307
+====================================================================
+
+// 2주 1일
+// 컴파일 환경 - 버전 17.14.13(August 2025)
+// Release/ x64
+// SDL 검사 아니오
+// 미리보기 - std:c++latest
+
+#include "save.h"
+
+#include <iostream>
+#include <print>
+#include <thread>
+#include <chrono>
+#include <fstream>
+using namespace std;
+
+//[문제] 구구단 전체를 출력하자
+// 줄 맞춰 출력하자.
+// 2 x 1 = 2
+// 단과 단은 한 줄 떼서 구분하라.
+
+int main()
+{
+	cout << "--------구구단 출력--------" << endl;
+	cout << "===============나===============" << endl;
+	{
+		for (int dan = 2; dan <= 9; ++dan) {
+			for (int i = 1; i <= 9; ++i) {
+				if (dan * i < 10)
+					std::cout << dan << " x " << i << " =  " << dan * i << '\n';
+				else
+					std::cout << dan << " x " << i << " = " << dan * i << '\n';
+			}
+			cout << endl;
+		}
+	}
+
+	cout << "===============교수님===============" << endl;
+	for (int dan = 2; dan <= 9; ++dan) {
+		for (int i = 1; i <= 9; ++i) {
+			println("{0} x {1} = {2:2d}", dan, i, dan * i);
+		}
+		cout << endl;
+	}
+
+	save("250908.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-08 14:36:56.2121060
+====================================================================
+
+// 2주 1일
+#include <iostream>
+#include "save.h"
+
+//[문제] int가 저장할 수 있는 값 중 최대값을 출력하라.
+
+int main()
+{
+	int n = 0x7F'FF'FF'FF;
+	//int n = 0x01'02'03'04;
+	//int n = 0b01111111'11111111'11111111'11111111;
+
+	std::cout << "현재 n의 값은 - " << n << '\n';
+
+	save("250908-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-08 14:40:05.0709231
+====================================================================
+
+// 2주 1일
+#include <iostream>
+#include <bitset>
+#include "save.h"
+
+//[문제] int가 저장할 수 있는 값 중 최대값을 출력하라.
+
+
+int main()
+{
+	//int n = 0x7F'FF'FF'FF;
+	int n = 0x01'02'03'04;
+	//int n = 0b01111111'11111111'11111111'11111111;
+
+	std::cout << "현재 n의 값은 - " << n << '\n';
+	std::bitset<32> bit = n;
+	std::cout << "		이진수 -- " << bit << '\n';
+
+	save("250908-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-08 14:40:20.8180233
+====================================================================
+
+// 2주 1일
+#include <iostream>
+#include <bitset>
+#include "save.h"
+
+//[문제] int가 저장할 수 있는 값 중 최대값을 출력하라.
+
+
+int main()
+{
+	//int n = 0x7F'FF'FF'FF;
+	int n = 0x01'02'03'04;
+	//int n = 0b01111111'11111111'11111111'11111111;
+
+	std::cout << "현재 n의 값은 - " << n << '\n';
+	std::bitset<32> bit = n;
+	std::cout << "		이진수 -- " << bit << '\n';
+
+	save("250908-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-08 14:56:12.4524712
+====================================================================
+
+// 2주 1일
+#include <iostream>
+#include <bitset>
+#include <numeric>
+#include "save.h"
+
+//[문제] int가 저장할 수 있는 값 중 최대값을 출력하라.
+
+
+int main()
+{
+	int n = std::numeric_limits<int>::max();
+	
+	std::cout << "int의 최댓값 - " << n << '\n';
+
+	save("250908-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-08 14:56:33.5650193
+====================================================================
+
+// 2주 1일
+#include <iostream>
+#include <bitset>
+#include <numeric>
+#include "save.h"
+
+//[문제] int가 저장할 수 있는 값 중 최대값을 출력하라.
+
+
+int main()
+{
+	constexpr int n = std::numeric_limits<int>::max();
+	
+	std::cout << "int의 최댓값 - " << n << '\n';
+
+	save("250908-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-10 16:32:52.9422804
+====================================================================
+
+// 2주 2일
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main()
+{
+	int n = 1234;				// 초기화 - Initialization		//이 문장의 의미 - 폰 노이만 구조
+
+	n = 1235;					// 대입, 할당, 배정 - assignment
+
+	std::cout << n;
+
+	save("250910-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-10 16:57:16.2152503
+====================================================================
+
+// 2주 2일
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [실습] 프로그램에서 int만큼 메모리를 요청한다.
+// 이 메모리가 정해지는 section은 3군데가 있다.
+
+int n;				// DATA
+
+int main()
+{
+	char c;			// STACK
+	int i;
+	long long l;
+	short s;
+
+	std::cout << "내가 요청한 c의 정체" << '\n';
+	std::cout << "메모리 크기 - " << sizeof(c) << "bytes" << '\n';
+	std::cout << "메모리 위치 - " << &c << '\n';
+	std::cout << "자료형      - " << typeid(c).name() << '\n' << endl;
+
+	std::cout << "내가 요청한 i의 정체" << '\n';
+	std::cout << "메모리 크기 - " << sizeof(i) << "bytes" << '\n';
+	std::cout << "메모리 위치 - " << addressof(i) << '\n';
+	std::cout << "자료형      - " << typeid(i).name() << '\n' << endl;
+
+	std::cout << "내가 요청한 l의 정체" << '\n';
+	std::cout << "메모리 크기 - " << sizeof(l) << "bytes" << '\n';
+	std::cout << "메모리 위치 - " << addressof(l) << '\n';
+	std::cout << "자료형      - " << typeid(l).name() << '\n' << endl;
+
+	std::cout << "내가 요청한 s의 정체" << '\n';
+	std::cout << "메모리 크기 - " << sizeof(s) << "bytes" << '\n';
+	std::cout << "메모리 위치 - " << addressof(s) << '\n';
+	std::cout << "자료형      - " << typeid(s).name() << '\n' << endl << endl;
+
+	new int;			// free-store
+
+	std::cout << "DATA		- " << addressof(n) << '\n';
+	std::cout << "STACK		- " << addressof(i) << '\n';
+	
+	save("250910-2.cpp");
+}
+
+====================================================================
+저장시간 - 2025-09-10 17:09:35.6439363
+====================================================================
+
+// 2주 2일
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+
+
+int main()
+{
+	int a,b,c,d;
+	
+	cout << "a의 주소 - " << addressof(a) << '\n';
+	cout << "b의 주소 - " << addressof(b) << '\n';
+	cout << "c의 주소 - " << addressof(c) << '\n';
+	cout << "d의 주소 - " << addressof(d) << '\n';
+
+	short e, f;
+	cout << "e의 주소 - " << addressof(e) << '\n';
+	cout << "f의 주소 - " << addressof(f) << '\n';
+	
+	save("250910-2.cpp");
+}
